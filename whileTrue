@@ -1,7 +1,7 @@
 '''Solicite números ao usuário. Diga a quantidade e a soma entre eles. O flag é 999'''
 c=s=0
 while True:
-    n=int(input('Digite um número: '))
+    n=int(input('Digite um número[999 para parar]: '))
     if n == 999:
         break
     c=c+1
