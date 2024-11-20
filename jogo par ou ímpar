@@ -1,0 +1,32 @@
+'''Faça um programa que jogue par ou ímpar com o computador. O jogo só será interrompido quando o jogador perder. Mostrando o final de vitórias consecutivas que ele conquistou no final do jogo'''
+c=0
+from random import randint
+print('Vamos jogar Par ou Ímpar')
+while True:
+    pc=randint(1,10)
+    jogador=int(input('Diga um valor: '))
+    pp=str(input('Par ou Ímpar?[P/I]: ')).upper().lower()
+    soma=jogador+pc
+    if soma%2!=0:
+        print(f'Você jogou {jogador} e o computador jogou {pc}. O resultado é {jogador+pc}.')
+        if pp in 'i':
+            print('Você venceu! O resultado foi ímpar')
+            c=c+1
+        if pp in 'p':
+            print('Você perdeu! Você escolheu par e o resultado é ímpar.')
+    else:
+        print(f'Você jogou {jogador} e o computador jogou {pc}. O resultado é {jogador+pc}.')
+        if pp in 'i':
+            print('Você perdeu! Você escolheu ímpar e o resultado é par.')
+            break
+        if pp in 'p':
+            print('Você venceu! O resultado foi par.')
+            c=c+1
+print(f'Você venceu {c} vez(es)') 
+
+
+
+
+
+
+    
