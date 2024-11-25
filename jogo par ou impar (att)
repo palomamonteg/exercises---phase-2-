@@ -1,0 +1,31 @@
+'''Jogo de par ou ímpar usando a biblioteca random'''
+
+from random import randint 
+print('Vamos jogar Par ou Ímpar')
+cont=0
+while True:
+    pc=randint(0,10)
+    jogador=int(input('Digite um número: '))
+    perg=' '
+    while perg not in 'PI':
+        perg=str(input('Par ou ímpar [P/I]: ')).strip().upper()[0]
+    soma=jogador+pc
+    if soma %2 == 0:
+        print(f'Você jogou {jogador} e o PC jogou {pc}. Deu um total de: {soma}.')
+        if perg in 'Pp':
+            print('Você Venceu! Deu par!')
+            cont=cont+1
+        if perg in 'Ii':
+            print(f'Você perdeu! Deu par!.')
+            break
+    elif soma %2 != 0:
+        print(f'Você jogou {jogador} e o PC jogou {pc}. Deu um total de: {soma}.')
+        if perg in 'Ii':
+            print('Você Venceu! Deu Ímpar!')
+            cont=cont+1
+        if perg in 'Pp':
+            print(f'Você Perdeu! Deu Ímpar!')
+            break
+    print('Vamos jogar novamente...')    
+print(f'Game Over! Você venceu {cont} vez(es).')
+        
