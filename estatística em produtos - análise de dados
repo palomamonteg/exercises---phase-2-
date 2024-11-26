@@ -1,0 +1,28 @@
+'''Crie um programa que leia o nome e o preço de vários produtos. O programa deverá perguntar se o usuário vai continuar ou não. No final, mostre:
+A) qual é o total gasto na compra; B) quantos produtos custam mais de R$1000; C) qual é o nome do produto mais barato.'''
+
+totvalor=maior=cont=caro=barato=0
+baratonome=caronome=' '
+while True:
+    nome=str(input('Digite o nome do produto: '))
+    preço=float(input('Digite o valor: R$'))
+    totvalor=totvalor+preço
+    cont=cont+1
+    if preço > 1000:
+        maior=maior+1
+    if cont == 1 or preço < barato:
+        barato = preço
+        baratonome = nome
+    if cont == 1 or preço > caro:
+        caro = preço
+        caronome = nome
+    perg = ' '
+    while perg not in 'SN':
+        perg=str(input('Deseja continuar?[S/N]: ')).strip().upper()[0]
+    if perg == 'N':
+        break
+print('-'*60)
+print(f'O total a ser pago: R${totvalor}')
+print(f'{maior} produto(s) tem valor maior que R$1.000')
+print(f'O produto mais barato foi -> {baratonome}, com o valor de R${barato}')
+print(f'O produto mais caro foi -> {caronome}, com o valor de R${caro}')
