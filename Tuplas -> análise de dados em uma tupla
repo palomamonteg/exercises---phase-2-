@@ -1,8 +1,8 @@
-'''Desenvolva um programa que leia quatro valores pelo teclado e guarde-os em uma tupla. No final, mostre: 
+'''Desenvolva um programa que leia quatro valores pelo teclado e guarde-os em uma tupla. No final, mostre:
 A) Quantas vezes apareceu o valor 9;
 B) Em que posição foi digitado o primeiro valor 3;
 C) Quais foram os números pares;
-D) Maior e Menor digitado.
+D) Maior e Menor digitado.'''
 
 n=(int(input('Digite o 1º número: ')), int(input('Digite o 2º número: ')), int(input('Digite o 3º número: ')), int(input('Digite o 4º número: ')))
 print(f'O número 9 apareceu {n.count(9)} vez(es).')
@@ -10,9 +10,9 @@ if 3 in n:
     print(f'O primeiro valor de número 3, se encontra na {n.index(3)+1}º posição.')
 else:
     print('Não houve número correspondente ao número 3!')
+print(f'Os números par(es) digitado(s) => ', end=' ')
 for c in n:
     if c%2==0:
-        print(f'Os números par(es) digitado(s) => ', end = ' ')
-        print(c, end = '')
+        print(c, end = ' ')
 print(f'\nO maior número digitado foi: {max(n)}')
 print(f'O menor número digitado foi: {min(n)}.')
